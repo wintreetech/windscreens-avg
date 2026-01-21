@@ -1,0 +1,149 @@
+@import "tailwindcss";
+
+/* ✅ Henju family (Vite-safe paths using relative URL from src/index.css) */
+
+@font-face {
+	font-family: "Henju";
+	src: url("./assets/fonts/henju/Henju-Thin.ttf") format("truetype");
+	font-weight: 100;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: "Henju";
+	src: url("./assets/fonts/henju/Henju-ThinSlant.ttf") format("truetype");
+	font-weight: 100;
+	font-style: italic;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Henju";
+	src: url("./assets/fonts/henju/Henju-ExtraLight.ttf") format("truetype");
+	font-weight: 200;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: "Henju";
+	src: url("./assets/fonts/henju/Henju-ExtraLightSlanted.ttf")
+		format("truetype");
+	font-weight: 200;
+	font-style: italic;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Henju";
+	src: url("./assets/fonts/henju/Henju-Light.ttf") format("truetype");
+	font-weight: 300;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: "Henju";
+	src: url("./assets/fonts/henju/Henju-LightSlanted.ttf") format("truetype");
+	font-weight: 300;
+	font-style: italic;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Henju";
+	src: url("./assets/fonts/henju/Henju-Regular.ttf") format("truetype");
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: "Henju";
+	src: url("./assets/fonts/henju/Henju-Slanted.ttf") format("truetype");
+	font-weight: 400;
+	font-style: italic;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Henju";
+	src: url("./assets/fonts/henju/Henju-Medium.ttf") format("truetype");
+	font-weight: 500;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: "Henju";
+	src: url("./assets/fonts/henju/Henju-MediumSlanted.ttf") format("truetype");
+	font-weight: 500;
+	font-style: italic;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Henju";
+	src: url("./assets/fonts/henju/Henju-SemiBold.ttf") format("truetype");
+	font-weight: 600;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: "Henju";
+	src: url("./assets/fonts/henju/Henju-SemiBoldSlanted.ttf") format("truetype");
+	font-weight: 600;
+	font-style: italic;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Henju";
+	src: url("./assets/fonts/henju/Henju-Bold.ttf") format("truetype");
+	font-weight: 700;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: "Henju";
+	src: url("./assets/fonts/henju/Henju-BoldSlanted.ttf") format("truetype");
+	font-weight: 700;
+	font-style: italic;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Henju";
+	src: url("./assets/fonts/henju/Henju-ExtraBold.ttf") format("truetype");
+	font-weight: 800;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: "Henju";
+	src: url("./assets/fonts/henju/Henju-ExtraBoldSlanted.ttf") format("truetype");
+	font-weight: 800;
+	font-style: italic;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Henju";
+	src: url("./assets/fonts/henju/Henju-Black.ttf") format("truetype");
+	font-weight: 900;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: "Henju";
+	src: url("./assets/fonts/henju/Henju-BlackSlant.ttf") format("truetype");
+	font-weight: 900;
+	font-style: italic;
+	font-display: swap;
+}
+
+/* ✅ Global usage */
+:root {
+	font-family: "Henju", ui-sans-serif, system-ui;
+}
+
+/* Optional utility class */
+.font-henju {
+	font-family: "Henju", ui-sans-serif, system-ui;
+}
