@@ -7,6 +7,9 @@ import SectionHeading from "../../components/SectionHeading";
 import Container from "../../components/Container";
 import Button from "../../components/Button";
 import Section from "../../components/Section";
+import WhyFeatureGrid from "../../components/services/WhyFeatureGrid";
+import { IMAGES } from "../../assets/images";
+import { BenefitsOfMobileCalibration } from "../../data";
 
 export default function ADASCalibrations() {
 	return (
@@ -23,16 +26,16 @@ export default function ADASCalibrations() {
 				<div className="grid grid-cols-1 lg:grid-cols-2 gap-10 xl:gap-25 items-center">
 					<div className="rounded-3xl overflow-hidden">
 						<img
-							src="https://placehold.co/1005x619"
+							src={IMAGES.What_is_ADAS_}
 							alt=""
-							className="w-full h-[260px] sm:h-[420px] lg:h-[619px] object-cover"
+							className="w-full object-cover"
 						/>
 					</div>
 
 					<div className="flex flex-col gap-8 pr-30">
 						<SectionHeading
 							align="left"
-							title={<span className="text-emerald-900">What is ADAS?</span>}
+							title={<span className="text-[#024F2D]">What is ADAS?</span>}
 						/>
 						<p className="text-lg sm:text-xl lg:text-2xl leading-relaxed text-black">
 							ADAS, which stands for Advanced Driver Assistance Systems,
@@ -54,7 +57,7 @@ export default function ADASCalibrations() {
 						<SectionHeading
 							align="left"
 							title={
-								<span className="text-emerald-900">Why do we use ADAS?</span>
+								<span className="text-[#024F2D]">Why do we use ADAS?</span>
 							}
 						/>
 						<p className="text-lg sm:text-xl lg:text-2xl leading-relaxed text-black">
@@ -70,11 +73,11 @@ export default function ADASCalibrations() {
 						</p>
 					</div>
 
-					<div className="rounded-3xl overflow-hidden lg:order-2 order-1">
+					<div className="overflow-hidden lg:order-2 order-1">
 						<img
-							src="https://placehold.co/1246x831"
+							src={IMAGES.Why_do_we_ADAS_}
 							alt=""
-							className="w-full h-[280px] sm:h-[420px] lg:h-[791px] object-cover"
+							className="w-full object-cover"
 						/>
 					</div>
 				</div>
@@ -83,11 +86,11 @@ export default function ADASCalibrations() {
 			{/* WHY CALIBRATION REQUIRED */}
 			<Section spacing="large">
 				<div className="grid grid-cols-1 lg:grid-cols-2 gap-10 xl:gap-25 items-center">
-					<div className="rounded-3xl overflow-hidden">
+					<div className="overflow-hidden">
 						<img
-							src="https://placehold.co/1098x913"
+							src={IMAGES.ADAS_Calibration_Section}
 							alt=""
-							className="w-full h-[280px] sm:h-[420px] lg:h-[913px] object-cover"
+							className="w-full h-[280px] sm:h-[420px] lg:h-[800px] object-cover"
 						/>
 					</div>
 
@@ -96,10 +99,10 @@ export default function ADASCalibrations() {
 							align="left"
 							title={
 								<>
-									<span className="text-emerald-900">
+									<span className="text-[#024F2D]">
 										Why is ADAS Calibration{" "}
 									</span>
-									<span className="text-green-600">
+									<span className="text-[#3D8C58]">
 										required after replacing a windscreen?
 									</span>
 								</>
@@ -126,83 +129,34 @@ export default function ADASCalibrations() {
 
 			{/* BENEFITS GRID (3 CARDS) */}
 			<Section spacing="large" className="bg-[#F5F5F5]">
-				<Container>
-					<div className="grid grid-cols-1 lg:grid-cols-2 gap-25 items-center">
-						{/* LEFT CONTENT */}
-						<div>
-							<div className="mb-12">
-								<h2 className="text-[#024F2D] font-henju text-4xl sm:text-5xl mb-4">
-									Preventive Measures
-								</h2>
-								<p className="text-lg sm:text-xl lg:text-2xl text-black leading-8 sm:leading-9">
-									To avoid windscreen damage, follow these best practices:
-								</p>
-							</div>
-
-							<div className="space-y-10">
-								{[
-									{
-										title: "Avoid Sudden Temperature Changes",
-										description:
-											"Prevent cracks by putting hot water on cold glass.",
-									},
-									{
-										title: "Regular Maintenance",
-										description:
-											"Replace windscreen wipers regularly to keep your windscreen clean and clear.",
-									},
-									{
-										title: "Drive Carefully",
-										description:
-											"On rough roads, drive cautiously to avoid stones and gravel hitting your windscreen.",
-									},
-									{
-										title: "Use Quality Washer Fluid",
-										description:
-											"Regularly top up your washer fluid to keep your windscreen clean.",
-									},
-								].map((item, index) => (
-									<div key={index} className="flex gap-4 items-start">
-										<div className="w-[34px] h-[34px] flex items-center justify-center">
-											<div className="w-7 h-7 bg-[#D69212] rounded-full" />
-										</div>
-
-										<div>
-											<h3 className="text-[#024F2D] font-henju text-2xl sm:text-[28px] mb-2">
-												{item.title}
-											</h3>
-											<p className="text-black text-lg sm:text-xl leading-8">
-												{item.description}
-											</p>
-										</div>
-									</div>
-								))}
-							</div>
-						</div>
-
-						{/* RIGHT IMAGE PLACEHOLDER */}
-						<div className="flex justify-center">
-							<div className="w-full max-w-[915px] h-[400px] sm:h-[550px] lg:h-[727px] bg-gray-300 rounded-xl" />
-						</div>
-					</div>
-				</Container>
+				<WhyFeatureGrid
+					title={
+						<>
+							<span className="text-[#024F2D]">
+								{" "}
+								Benefits of Mobile Calibration
+							</span>
+						</>
+					}
+					items={BenefitsOfMobileCalibration}
+				/>
 			</Section>
 
 			{/* OUR COMMITMENT */}
 			<Section spacing="large">
 				<div className="grid grid-cols-1 lg:grid-cols-2 gap-10 xl:gap-25 items-center">
-					<div className="rounded-3xl overflow-hidden">
+					<div className="overflow-hidden">
 						<img
-							src="https://placehold.co/1005x727"
+							src={IMAGES.Our_Commitment_Two}
 							alt=""
-							className="w-full h-[280px] sm:h-[420px] lg:h-[727px] object-cover"
+							className="w-full h-[280px] sm:h-[420px] lg:h-[600px] object-cover"
 						/>
 					</div>
 
 					<div className="flex flex-col gap-8 pr-30">
 						<SectionHeading
 							align="left"
-							title={<span className="text-emerald-900">Our Commitment</span>}
+							title={<span className="text-[#024F2D]">Our Commitment</span>}
 						/>
 
 						<p className="text-lg sm:text-xl lg:text-2xl leading-8 sm:leading-9 text-black">
@@ -222,26 +176,5 @@ export default function ADASCalibrations() {
 				</div>
 			</Section>
 		</main>
-	);
-}
-
-/* ------------ small reusable local card ------------ */
-
-function BenefitCard({ title, desc }) {
-	return (
-		<div className="flex flex-col items-center text-center gap-6">
-			<div className="h-28 w-28 rounded-[32px] bg-emerald-900/10 flex items-center justify-center">
-				<div className="h-16 w-16 rounded-2xl bg-yellow-600" />
-			</div>
-
-			<div className="flex flex-col gap-3">
-				<h3 className="text-2xl sm:text-3xl lg:text-4xl font-medium text-emerald-900">
-					{title}
-				</h3>
-				<p className="text-lg sm:text-xl lg:text-2xl leading-relaxed text-black">
-					{desc}
-				</p>
-			</div>
-		</div>
 	);
 }

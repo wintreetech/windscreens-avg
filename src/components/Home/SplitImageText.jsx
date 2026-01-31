@@ -36,17 +36,17 @@ export default function SplitImageText({
               ${reverse ? "lg:pl-[120px]" : "lg:pr-[120px]"}
             `}
 					>
-						<div className="flex flex-col gap-6">
+						<div className="flex flex-col ">
 							<SectionHeading kicker={kicker} title={title} align="left" />
 
 							{description && (
-								<p className="text-lg sm:text-xl leading-relaxed text-black">
+								<p className="text-lg my-8 sm:text-2xl leading-relaxed text-black">
 									{description}
 								</p>
 							)}
 
 							{(primaryCta || secondaryCta) && (
-								<div className="flex flex-wrap gap-4 pt-4">
+								<div className="flex flex-wrap gap-4 ">
 									{primaryCta && (
 										<Button variant={primaryCta.variant || "primary"}>
 											{primaryCta.label}

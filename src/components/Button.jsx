@@ -8,12 +8,14 @@ export default function Button({
 	...props
 }) {
 	const base =
-		"inline-flex items-center justify-center rounded-xl px-6 py-4 text-base sm:text-lg font-medium transition focus:outline-none focus:ring-2 focus:ring-offset-2";
+		"inline-flex items-center justify-center px-6 py-4 text-base sm:text-lg transition focus:outline-none focus:ring-2 focus:ring-offset-2";
 	const variants = {
-		primary: "bg-emerald-900 text-white focus:ring-emerald-900",
-		secondary: "bg-yellow-600 text-white focus:ring-yellow-600",
+		primary: "bg-[#024F2D] text-white font-semibold focus:ring-[#024F2D]",
+
+		secondary: "bg-[#D69212] text-white font-semibold focus:ring-yellow-600",
+
 		outline:
-			"border border-emerald-900 text-emerald-900 bg-transparent focus:ring-emerald-900",
+			"border border-[#024F2D] text-[#024F2D] bg-transparent font-normal focus:ring-[#024F2D]",
 	};
 
 	return (

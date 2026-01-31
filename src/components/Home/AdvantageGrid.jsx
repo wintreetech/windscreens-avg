@@ -1,40 +1,7 @@
 import React from "react";
 import Container from "../Container";
 
-const advantages = [
-	{
-		title: "Nationwide Mobile Service",
-		desc: "Our technicians come to you, whether at home, work, or any other location of your choice.",
-		iconColor: "#D69212",
-	},
-	{
-		title: "Quick Turnaround",
-		desc: "Replacements completed within 1 working day.",
-		iconColor: "#D69212",
-	},
-	{
-		title: "IMI-Certified Technicians",
-		desc: "Our team is trained to the highest standards, ensuring a safe and professional job every time.",
-		iconColor: "#D69212",
-	},
-	{
-		title: "Mobile ADAS Calibration",
-		desc: "We come to you for all our services ensuring that you never need to take your vehicle to the garage.",
-		iconColor: "#D69212",
-	},
-	{
-		title: "Customer Portal",
-		desc: "Make bookings and see updates for all your fleet bookings at any given moment.",
-		iconColor: "#D69212",
-	},
-	{
-		title: "Efficient Customer Service",
-		desc: "Phones answered fast, emails answered quickly—so your fleet stays moving.",
-		iconColor: "#D69212",
-	},
-];
-
-export default function AdvantageGrid() {
+export default function AdvantageGrid({ advantages, title, subtitle, bg }) {
 	return (
 		<Container className="relative flex flex-col items-center gap-[90px]">
 			{/* Decorative SVG background */}
@@ -57,10 +24,10 @@ export default function AdvantageGrid() {
 			{/* Heading */}
 			<div className="flex flex-col items-center lg:items-start gap-4 w-full text-center lg:text-left">
 				<p className="text-[#3D8C58] font-henju text-base font-medium tracking-[0.12em]">
-					The AVG Advantage
+					{title}
 				</p>
 				<p className="text-[#FFF] font-henju text-4xl sm:text-5xl lg:text-[54px] font-bold leading-tight">
-					Here’s what sets us apart:
+					{subtitle}
 				</p>
 			</div>
 
@@ -72,9 +39,11 @@ export default function AdvantageGrid() {
 						className="flex flex-col items-start gap-4 w-full max-w-[544px]"
 					>
 						{/* Icon */}
-						<div
-							className="w-16 h-16 rounded-xl"
-							style={{ backgroundColor: adv.iconColor }}
+
+						<img
+							src={adv.icon}
+							alt={adv.title}
+							className="w-16 h-16 object-contain"
 						/>
 
 						{/* Text */}

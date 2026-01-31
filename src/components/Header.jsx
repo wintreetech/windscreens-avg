@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { IMAGES } from "../assets/images";
 import { Link } from "react-router-dom";
+import { PhoneCall } from "lucide-react";
 
 export default function Header() {
 	const [menuOpen, setMenuOpen] = useState(false);
@@ -9,17 +10,25 @@ export default function Header() {
 	return (
 		<header className="sticky top-0 z-50 w-full bg-white">
 			{/* Top Bar */}
-			<div className="bg-green-900 text-white">
-				<div className="px-4 min-[1400px]:px-[72px] py-2.5 flex justify-center items-center gap-2 text-sm">
-					<span className="text-yellow-500 font-semibold">Call Us:</span>
-					<span>0333 015 38 83</span>
-					<span className="hidden sm:inline">to Discuss Your Requirements</span>
-				</div>
+			<div className="bg-[#024F2D] px-4 min-[1400px]:px-18 py-2.5 flex justify-center items-center gap-2 text-sm">
+				<PhoneCall
+					className="w-4 h-4 text-yellow-400"
+					fill="currentColor"
+					strokeWidth={0}
+				/>
+
+				<span className=" text-white">
+					Call Us: <b>0333 015 38 83</b>
+					<span className="hidden sm:inline">
+						{" "}
+						to Discuss Your Requirements
+					</span>
+				</span>
 			</div>
 
 			{/* Main Header */}
 			<div className="border-b border-gray-200">
-				<div className="mx-auto px-4 min-[1400px]:px-[72px] h-[90px] flex items-center justify-between">
+				<div className="mx-auto px-4 min-[1400px]:px-18 h-22.5 flex items-center justify-between">
 					{/* Logo + Menu */}
 					<div className="flex items-center gap-6">
 						<Link to="/" className="flex-shrink-0">

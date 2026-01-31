@@ -7,7 +7,7 @@ export default function NotFound() {
 	return (
 		<div className="min-h-[70vh] flex items-center justify-center px-6">
 			<div className="max-w-xl text-center">
-				<h1 className="text-4xl sm:text-5xl font-bold text-emerald-900">
+				<h1 className="text-4xl sm:text-5xl font-bold text-[#024F2D]">
 					Page not found
 				</h1>
 				<p className="mt-4 text-lg text-black/70">
@@ -18,7 +18,7 @@ export default function NotFound() {
 
 				<Link
 					to="/"
-					className="inline-flex mt-8 px-6 py-3 rounded-xl bg-emerald-900 text-white font-medium"
+					className="inline-flex mt-8 px-6 py-3 rounded-xl bg-[#024F2D] text-white font-medium"
 				>
 					Go Home
 				</Link>

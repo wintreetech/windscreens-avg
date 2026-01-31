@@ -1,10 +1,10 @@
 import React from "react";
+import { IMAGES } from "../assets/images";
 
 function TickIcon() {
 	return (
 		<span className="h-14 w-14 relative overflow-hidden shrink-0">
-			<span className="absolute left-[4.43px] top-[4.43px] h-11 w-11 bg-green-600" />
-			<span className="absolute left-[17px] top-[21px] h-3 w-5 border-[3px] border-white border-t-0 border-r-0 rotate-[-45deg]" />
+			<img src={IMAGES.Green_Right} />
 		</span>
 	);
 }
@@ -18,7 +18,9 @@ function BenefitRow({ title, note }) {
 					{title}
 				</p>
 				{note ? (
-					<p className="text-black/50 text-base sm:text-lg">{note}</p>
+					<p className="text-[#595959]/50 text-base sm:text-lg font-semibold">
+						{note}
+					</p>
 				) : null}
 			</div>
 		</div>

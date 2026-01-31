@@ -1,67 +1,139 @@
-import React from "react";
+import React, { useState } from "react";
 
+/* ---------- STEP DOT ---------- */
 function StepDot({ active }) {
 	return (
-		<span className="h-14 w-14 relative overflow-hidden shrink-0">
+		<span className="h-14 w-14 flex items-center justify-center shrink-0">
 			<span
-				className={`absolute left-[9px] top-[9px] h-9 w-9 rounded-full ${
-					active ? "bg-emerald-900" : "bg-neutral-200"
+				className={`h-9 w-9 rounded-full ${
+					active ? "bg-[#024F2D]" : "bg-neutral-200"
 				}`}
 			/>
 		</span>
 	);
 }
 
-function FakeInput({ label, rightIcon }) {
+/* ---------- TEXT INPUT ---------- */
+function Input({ label, name, value, onChange }) {
 	return (
-		<div className="w-full p-6 bg-zinc-100 flex items-center gap-2.5">
-			<span className="flex-1 text-black/50 text-base sm:text-lg">{label}</span>
-			{rightIcon ? <span className="shrink-0">{rightIcon}</span> : null}
+		<input
+			type="text"
+			name={name}
+			value={value}
+			onChange={onChange}
+			placeholder={label}
+			className="
+				w-full p-6 bg-zinc-100
+				text-black text-base sm:text-lg
+				placeholder-black/50
+				outline-none
+			"
+		/>
+	);
+}
+
+/* ---------- SELECT (DaisyUI) ---------- */
+function Select({ label, name, value, onChange, options }) {
+	return (
+		<select
+			name={name}
+			value={value}
+			onChange={onChange}
+			className="select w-full bg-zinc-100 text-black text-base sm:text-lg"
+		>
+			<option value="">{label}</option>
+			{options.map((opt) => (
+				<option key={opt} value={opt}>
+					{opt}
+				</option>
+			))}
+		</select>
+	);
+}
+
+/* ---------- RADIO GROUP (DaisyUI) ---------- */
+function RadioGroup({ label, name, value, onChange }) {
+	return (
+		<div className="flex items-center justify-between p-6 bg-zinc-100">
+			<p className="text-black/60 text-base sm:text-lg">{label}</p>
+
+			<div className="flex items-center gap-6">
+				<label className="flex items-center gap-2">
+					<input
+						type="radio"
+						name={name}
+						value="yes"
+						checked={value === "yes"}
+						onChange={onChange}
+						className="radio radio-success"
+					/>
+					<span>Yes</span>
+				</label>
+
+				<label className="flex items-center gap-2">
+					<input
+						type="radio"
+						name={name}
+						value="no"
+						checked={value === "no"}
+						onChange={onChange}
+						className="radio radio-success"
+					/>
+					<span>No</span>
+				</label>
+			</div>
 		</div>
 	);
 }
 
-function CaretDown() {
-	return (
-		<span className="h-6 w-6 relative overflow-hidden">
-			<span className="absolute left-[6px] top-[9px] w-3 h-1.5 border-[1.5px] border-emerald-900" />
-		</span>
-	);
-}
+/* ---------- MAIN COMPONENT ---------- */
+export default function TradeAccountApplication() {
+	const [step, setStep] = useState(1);
 
-function ToggleCircle() {
-	return (
-		<span className="h-6 w-6 relative overflow-hidden">
-			<span className="absolute left-[4px] top-[4px] h-4 w-4 rounded-full border border-black/50 bg-white" />
-		</span>
-	);
-}
+	const [form, setForm] = useState({
+		tradingAddress: "",
+		streetAddress: "",
+		address2: "",
+		city: "",
+		county: "",
+		zip: "",
+		country: "",
+		invoiceEmail: "",
+		purchaseOrder: "",
+		statementEmail: "",
+		accountsPerson: "",
+		accountsEmail: "",
+		accountsPhone: "",
+		fleetPerson: "",
+		fleetEmail: "",
+		fleetPhone: "",
+		fleetSize: "",
+	});
 
-function UpDown() {
-	return (
-		<span className="h-6 w-6 relative overflow-hidden">
-			<span className="absolute left-[6px] top-[14px] w-3 h-1.5 border-[1.5px] border-emerald-900" />
-			<span className="absolute left-[6px] top-[3px] w-3 h-1.5 border-[1.5px] border-emerald-900" />
-		</span>
-	);
-}
+	const handleChange = (e) => {
+		const { name, value } = e.target;
+		setForm((prev) => ({ ...prev, [name]: value }));
+	};
 
-export default function TradeAccountApplication({ step = 1, onStepChange }) {
+	const handleSubmit = () => {
+		console.log("SUBMITTED FORM DATA 👉", form);
+	};
+
 	return (
-		<div className="grid grid-cols-1 lg:grid-cols-[560px_1fr] gap-10 lg:gap-16 items-start">
+		<div className="grid grid-cols-1 lg:grid-cols-[560px_1fr] gap-10 lg:gap-16">
 			{/* LEFT PANEL */}
-			<div className="flex flex-col gap-10">
-				<h2 className="text-3xl sm:text-4xl lg:text-5xl text-emerald-900 max-w-[557px]">
+			<div className="relative flex flex-col gap-12">
+				<h2 className="text-3xl sm:text-4xl lg:text-5xl text-[#024F2D]">
 					Trade Account Application
 				</h2>
 
-				{/* vertical line */}
-				<div className="hidden lg:block h-20 w-0 border-l-[5px] border-neutral-200 ml-7" />
+				<div className="relative flex flex-col gap-10">
+					{/* vertical line */}
+					<div className="hidden lg:block absolute left-[27px] top-[60px] h-[72px] border-l-[5px] border-neutral-200" />
 
-				<div className="flex flex-col gap-8">
 					<div className="flex items-center gap-4">
 						<StepDot active={step === 1} />
-						<p className="text-black text-2xl sm:text-3xl lg:text-4xl font-medium">
+						<p className="text-2xl sm:text-3xl lg:text-4xl font-medium">
 							Business Contact information
 						</p>
 					</div>
@@ -79,61 +151,172 @@ export default function TradeAccountApplication({ step = 1, onStepChange }) {
 				</div>
 			</div>
 
-			{/* RIGHT FORM CARD */}
+			{/* RIGHT FORM */}
 			<div className="bg-white p-6 sm:p-8 flex flex-col gap-4">
-				<FakeInput label="Trading Address:" />
-				<FakeInput label="Street Address" />
-				<FakeInput label="Address Line 2" />
+				{step === 1 && (
+					<>
+						<Input
+							label="Trading Address"
+							name="tradingAddress"
+							value={form.tradingAddress}
+							onChange={handleChange}
+						/>
+						<Input
+							label="Street Address"
+							name="streetAddress"
+							value={form.streetAddress}
+							onChange={handleChange}
+						/>
+						<Input
+							label="Address Line 2"
+							name="address2"
+							value={form.address2}
+							onChange={handleChange}
+						/>
 
-				<div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-					<FakeInput label="City" />
-					<FakeInput label="County / State / Region" />
-				</div>
+						<div className="grid sm:grid-cols-2 gap-4">
+							<Input
+								label="City"
+								name="city"
+								value={form.city}
+								onChange={handleChange}
+							/>
+							<Input
+								label="County / State / Region"
+								name="county"
+								value={form.county}
+								onChange={handleChange}
+							/>
+						</div>
 
-				<div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-					<FakeInput label="ZIP / Postal Code" />
-					<FakeInput label="Country" rightIcon={<CaretDown />} />
-				</div>
+						<div className="grid sm:grid-cols-2 gap-4">
+							<Input
+								label="ZIP / Postal Code"
+								name="zip"
+								value={form.zip}
+								onChange={handleChange}
+							/>
+							<Select
+								label="Country"
+								name="country"
+								value={form.country}
+								onChange={handleChange}
+								options={["UK", "Ireland", "Other"]}
+							/>
+						</div>
 
-				<div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-					<FakeInput label="Invoice Email:" />
-					<FakeInput
-						label="Is a Purchase Order Required?"
-						rightIcon={<ToggleCircle />}
-					/>
-				</div>
+						<div className="grid sm:grid-cols-2 gap-4">
+							<Input
+								label="Invoice Email"
+								name="invoiceEmail"
+								value={form.invoiceEmail}
+								onChange={handleChange}
+							/>
+							<RadioGroup
+								label="Purchase Order Required?"
+								name="purchaseOrder"
+								value={form.purchaseOrder}
+								onChange={handleChange}
+							/>
+						</div>
 
-				<FakeInput label="Statement Email:" />
+						<Input
+							label="Statement Email"
+							name="statementEmail"
+							value={form.statementEmail}
+							onChange={handleChange}
+						/>
 
-				<div className="pt-6 border-t border-zinc-100 flex flex-col gap-4">
-					<div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-						<FakeInput label="Accounts Contact Person:" />
-						<FakeInput label="Accounts Contact Email:" />
-					</div>
-					<FakeInput label="Accounts Contact Phone Number:" />
-				</div>
+						<div className="pt-6 border-t border-zinc-100 flex flex-col gap-4">
+							<div className="grid sm:grid-cols-2 gap-4">
+								<Input
+									label="Accounts Contact Person"
+									name="accountsPerson"
+									value={form.accountsPerson}
+									onChange={handleChange}
+								/>
+								<Input
+									label="Accounts Contact Email"
+									name="accountsEmail"
+									value={form.accountsEmail}
+									onChange={handleChange}
+								/>
+							</div>
+							<Input
+								label="Accounts Contact Phone Number"
+								name="accountsPhone"
+								value={form.accountsPhone}
+								onChange={handleChange}
+							/>
+						</div>
 
-				<div className="pt-6 border-t border-zinc-100 flex flex-col gap-4">
-					<div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-						<FakeInput label="Fleet Contact Person:" />
-						<FakeInput label="Fleet Contact Email:" />
-					</div>
+						<div className="pt-6 border-t border-zinc-100 flex flex-col gap-4">
+							<div className="grid sm:grid-cols-2 gap-4">
+								<Input
+									label="Fleet Contact Person"
+									name="fleetPerson"
+									value={form.fleetPerson}
+									onChange={handleChange}
+								/>
+								<Input
+									label="Fleet Contact Email"
+									name="fleetEmail"
+									value={form.fleetEmail}
+									onChange={handleChange}
+								/>
+							</div>
 
-					<div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-						<FakeInput label="Fleet Contact Phone Number:" />
-						<FakeInput label="Fleet Size:" rightIcon={<UpDown />} />
-					</div>
-				</div>
+							<div className="grid sm:grid-cols-2 gap-4">
+								<Input
+									label="Fleet Contact Phone Number"
+									name="fleetPhone"
+									value={form.fleetPhone}
+									onChange={handleChange}
+								/>
+								<Select
+									label="Fleet Size"
+									name="fleetSize"
+									value={form.fleetSize}
+									onChange={handleChange}
+									options={["1–5", "6–20", "21–50", "50+"]}
+								/>
+							</div>
+						</div>
 
-				<div className="pt-4">
-					<button
-						type="button"
-						onClick={() => onStepChange?.(step === 1 ? 2 : 1)}
-						className="px-6 py-4 bg-emerald-900 text-white text-base sm:text-lg inline-flex items-center justify-center"
-					>
-						Next
-					</button>
-				</div>
+						<button
+							onClick={() => setStep(2)}
+							className="mt-4 px-6 py-4 bg-[#024F2D] text-white text-lg w-fit"
+						>
+							Next
+						</button>
+					</>
+				)}
+
+				{step === 2 && (
+					<>
+						<div className="h-[360px] flex items-center justify-center text-black/40 text-xl">
+							Company Information form will be added here
+						</div>
+
+						<div className="flex items-center gap-4">
+							<button
+								type="button"
+								onClick={() => setStep(1)}
+								className="px-6 py-4 bg-zinc-100 text-black text-lg"
+							>
+								Back
+							</button>
+
+							<button
+								type="button"
+								onClick={handleSubmit}
+								className="px-6 py-4 bg-[#024F2D] text-white text-lg"
+							>
+								Submit
+							</button>
+						</div>
+					</>
+				)}
 			</div>
 		</div>
 	);

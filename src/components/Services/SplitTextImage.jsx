@@ -17,7 +17,7 @@ export default function SplitTextImage({
 					reverse ? "lg:[&>*:first-child]:order-2" : ""
 				}`}
 			>
-				<div className="flex flex-col gap-6">
+				<div className="flex flex-col gap-8">
 					<SectionHeading align="left" kicker={kicker} title={title} />
 
 					{description ? (
@@ -27,7 +27,7 @@ export default function SplitTextImage({
 					) : null}
 				</div>
 
-				<div className="rounded-3xl overflow-hidden">
+				<div className="overflow-hidden">
 					<img
 						src={imageUrl}
 						alt=""

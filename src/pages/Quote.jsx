@@ -32,9 +32,9 @@ function Quote() {
 					logo="https://placehold.co/189x60"
 					title={
 						<>
-							<span className="text-emerald-900">What </span>
-							<span className="text-green-600">our customers say </span>
-							<span className="text-emerald-900">about their clearer view</span>
+							<span className="text-[#024F2D]">What </span>
+							<span className="text-[#3D8C58]">our customers say </span>
+							<span className="text-[#024F2D]">about their clearer view</span>
 						</>
 					}
 					testimonials={[

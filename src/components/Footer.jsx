@@ -25,7 +25,7 @@ export default function Footer() {
 									Contact Us
 								</p>
 
-								<h3 className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-emerald-900 leading-tight">
+								<h3 className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-[#024F2D] leading-tight">
 									Our friendly team is here to help you get back on the road
 									safely.
 								</h3>

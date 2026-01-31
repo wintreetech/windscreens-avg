@@ -16,7 +16,7 @@ export default function WhyFeatureGrid({
 				<SectionHeading align="center" kicker={kicker} title={title} />
 			</div>
 
-			<div className="grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-14">
+			<div className="grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-16">
 				{items.map((item) => (
 					<IconFeatureCard
 						key={item.title}

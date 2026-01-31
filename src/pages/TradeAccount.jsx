@@ -7,6 +7,11 @@ import TestimonialsSection from "../components/TestimonialsSection";
 import TradeAccountBenefits from "../components/TradeAccountBenefits";
 import TradeAccountApplication from "../components/TradeAccountApplication";
 import Section from "../components/Section";
+import AvgAdvantageSection from "../components/AvgAdvantageSection";
+import TradeAccountsBanner from "../components/TradeAccountsBanner";
+import QuoteProcess from "../components/QuoteProcess";
+import { advantages, Testimonial } from "../data";
+import { IMAGES } from "../assets/images";
 
 export default function TradeAccount() {
 	const [step, setStep] = useState(1);
@@ -28,12 +33,45 @@ export default function TradeAccount() {
         "
 			/>
 
+			<Section spacing="large" className="bg-[#F5F5F5]">
+				<AvgAdvantageSection
+					kicker="The AVG Advantage"
+					title="Here’s what sets us apart:"
+					items={advantages}
+					bottomLine={
+						<>
+							When you choose AVG Windscreens, you're choosing a partner that
+							values quality, <br className="hidden sm:block" />
+							convenience, and customer service.
+						</>
+					}
+				/>
+			</Section>
+
+			{/* ✅ the rest sections like figma */}
+			<Section spacing="large" className="bg-[#024F2D]">
+				<TradeAccountsBanner
+					darkBg
+					title={
+						<>
+							<span className="text-[#ffffff]">
+								We offer exclusive benefits for businesses
+							</span>
+							<span className="text-[#ffffff]">
+								{" "}
+								with regular vehicle glass needs.
+							</span>
+						</>
+					}
+				/>
+			</Section>
+
 			{/* SECTION 1: Intro + Benefits */}
 			<Section spacing="large">
 				<Container>
-					<div className="max-w-[1458px] mx-auto flex flex-col items-center gap-16">
+					<div className="mx-auto flex flex-col items-center gap-16">
 						<div className="text-center flex flex-col gap-4">
-							<h2 className="text-3xl sm:text-4xl lg:text-5xl text-emerald-900">
+							<h2 className="text-3xl font-bold sm:text-4xl lg:text-5xl text-[#024F2D]">
 								Trade Account
 							</h2>
 							<p className="text-lg sm:text-xl lg:text-2xl text-black leading-relaxed">
@@ -72,56 +110,24 @@ export default function TradeAccount() {
 				</Container>
 			</Section>
 
+			<Section spacing="large" className="#f5f5f5">
+				<QuoteProcess />
+			</Section>
+
 			{/* Testimonials (you already have component) */}
-			<Section spacing="large">
+			<Section spacing="large" className="bg-[#F5F5F5]">
 				<TestimonialsSection
-					image="https://placehold.co/1005x727"
+					image={IMAGES.testimonial1}
 					logo="https://placehold.co/189x60"
 					title={
 						<>
-							<span className="text-emerald-900">What </span>
-							<span className="text-green-600">our customers say </span>
-							<span className="text-emerald-900">about their clearer view</span>
+							<span className="text-[#024F2D]">What </span>
+							<span className="text-[#3D8C58]">our customers say </span>
+							<span className="text-[#024F2D]">about their clearer view</span>
 						</>
 					}
-					testimonials={[
-						{
-							quote:
-								"We have a fleet of over 3,500 vehicles and AVG manage these with a fast & efficient service.\nPrices are very competitive.\n\nWould recommend to anybody needing glass repair.",
-							name: "Shaun Dwyer",
-							role: "Transport Manager",
-						},
-						{
-							quote:
-								"Super quick and professional service. Great communication throughout and the job was done perfectly.",
-							name: "John Smith",
-							role: "Fleet Supervisor",
-						},
-						{
-							quote:
-								"Excellent mobile service — saved us a lot of downtime. Highly recommended.",
-							name: "Emily Johnson",
-							role: "Operations Lead",
-						},
-						{
-							quote:
-								"Very efficient team and pricing was competitive. We’ll keep using AVG for our fleet.",
-							name: "Michael Brown",
-							role: "Transport Coordinator",
-						},
-						{
-							quote:
-								"Friendly support team and fast scheduling. The portal is very helpful for tracking jobs.",
-							name: "Sarah Lee",
-							role: "Admin Manager",
-						},
-						{
-							quote:
-								"Technicians were on time, the work was clean, and the vehicle was ready quickly.",
-							name: "David Wilson",
-							role: "Fleet Manager",
-						},
-					]}
+					kicker="Testimonials"
+					testimonials={Testimonial}
 				/>
 			</Section>
 		</div>

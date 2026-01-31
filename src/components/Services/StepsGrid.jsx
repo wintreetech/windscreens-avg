@@ -3,9 +3,15 @@ import React from "react";
 function StepCard({ icon, step, text }) {
 	return (
 		<div className="w-full max-w-[520px] flex flex-col items-center gap-4">
-			<div className="h-28 w-28 overflow-hidden">{icon}</div>
+			<img
+				src={icon}
+				alt="icon"
+				width={112}
+				height={112}
+				className="object-contain"
+			/>
 
-			<p className="text-green-600 text-xl sm:text-2xl font-medium text-center">
+			<p className="text-[#3D8C58] text-xl sm:text-2xl font-medium text-center">
 				{step}
 			</p>
 

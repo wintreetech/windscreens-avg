@@ -7,7 +7,7 @@ const Card = ({ title, description, icon }) => (
 		</div>
 
 		<div className="flex flex-col gap-4">
-			<h3 className="text-2xl sm:text-3xl lg:text-4xl font-medium text-emerald-900">
+			<h3 className="text-2xl sm:text-3xl lg:text-4xl font-medium text-[#024F2D]">
 				{title}
 			</h3>
 			<p className="text-lg sm:text-xl lg:text-2xl leading-8 sm:leading-9 text-black">

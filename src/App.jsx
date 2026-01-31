@@ -16,6 +16,7 @@ import BodyglassReplacements from "./pages/services/BodyglassReplacements";
 import WingMirrorReplacements from "./pages/services/WingMirrorReplacements";
 import AvgAdvantagePage from "./pages/AvgAdvantagePage";
 import Faqs from "./pages/Faqs";
+import WhoWeAre from "./pages/WhoWeAre";
 
 const router = createBrowserRouter([
 	{
@@ -54,6 +55,10 @@ const router = createBrowserRouter([
 			{
 				path: "/faqs",
 				element: <Faqs />,
+			},
+			{
+				path: "/who-we-are",
+				element: <WhoWeAre />,
 			},
 		],
 	},

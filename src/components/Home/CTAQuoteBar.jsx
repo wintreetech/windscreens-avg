@@ -4,7 +4,7 @@ import Button from "../Button";
 
 export default function CTAQuoteBar() {
 	return (
-		<section className="bg-emerald-900">
+		<section className="bg-[#024F2D]">
 			<Container className="py-16 sm:py-20 lg:py-30 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8">
 				<div className="max-w-2xl">
 					<p className="text-white text-sm font-medium uppercase tracking-widest">

@@ -5,6 +5,8 @@ import FAQAccordion from "../components/FAQAccordion";
 import TestimonialsSection from "../components/TestimonialsSection";
 import TradeAccountsBanner from "../components/TradeAccountsBanner";
 import Section from "../components/Section";
+import { Testimonial } from "../data";
+import { IMAGES } from "../assets/images";
 
 export default function Faqs() {
 	const leftFaqs = [
@@ -35,7 +37,7 @@ export default function Faqs() {
 					affect repairability. For full details on what can and cannot be{" "}
 					<a
 						href="/services/windscreen-chip-repairs"
-						className="text-green-600 underline"
+						className="text-[#3D8C58] underline"
 					>
 						repaired
 					</a>
@@ -132,7 +134,7 @@ export default function Faqs() {
 			{/* ✅ FAQ SECTION */}
 			<Section spacing="large">
 				<Container>
-					<h1 className="text-center text-3xl sm:text-4xl lg:text-5xl text-emerald-900 font-henju">
+					<h1 className="text-center text-3xl sm:text-4xl lg:text-5xl text-[#024F2D] font-henju">
 						Frequently Asked Questions
 					</h1>
 
@@ -145,58 +147,35 @@ export default function Faqs() {
 
 			{/* ✅ the rest sections like figma */}
 			<Section spacing="large" className="bg-[#024F2D]">
-				<TradeAccountsBanner onCtaHref="/trade-account" />
+				<TradeAccountsBanner
+					darkBg
+					title={
+						<>
+							<span className="text-[#ffffff]">
+								We offer exclusive benefits for businesses
+							</span>
+							<span className="text-[#ffffff]">
+								{" "}
+								with regular vehicle glass needs.
+							</span>
+						</>
+					}
+				/>
 			</Section>
 
 			<Section spacing="large">
 				<TestimonialsSection
-					image="https://placehold.co/1005x727"
+					image={IMAGES.testimonial1}
 					logo="https://placehold.co/189x60"
 					title={
 						<>
-							<span className="text-emerald-900">What </span>
-							<span className="text-green-600">our customers say </span>
-							<span className="text-emerald-900">about their clearer view</span>
+							<span className="text-[#024F2D]">What </span>
+							<span className="text-[#3D8C58]">our customers say </span>
+							<span className="text-[#024F2D]">about their clearer view</span>
 						</>
 					}
-					testimonials={[
-						{
-							quote:
-								"We have a fleet of over 3,500 vehicles and AVG manage these with a fast & efficient service.\nPrices are very competitive.\n\nWould recommend to anybody needing glass repair.",
-							name: "Shaun Dwyer",
-							role: "Transport Manager",
-						},
-						{
-							quote:
-								"Super quick and professional service. Great communication throughout and the job was done perfectly.",
-							name: "John Smith",
-							role: "Fleet Supervisor",
-						},
-						{
-							quote:
-								"Excellent mobile service — saved us a lot of downtime. Highly recommended.",
-							name: "Emily Johnson",
-							role: "Operations Lead",
-						},
-						{
-							quote:
-								"Very efficient team and pricing was competitive. We’ll keep using AVG for our fleet.",
-							name: "Michael Brown",
-							role: "Transport Coordinator",
-						},
-						{
-							quote:
-								"Friendly support team and fast scheduling. The portal is very helpful for tracking jobs.",
-							name: "Sarah Lee",
-							role: "Admin Manager",
-						},
-						{
-							quote:
-								"Technicians were on time, the work was clean, and the vehicle was ready quickly.",
-							name: "David Wilson",
-							role: "Fleet Manager",
-						},
-					]}
+					kicker="Testimonials"
+					testimonials={Testimonial}
 				/>
 			</Section>
 		</>

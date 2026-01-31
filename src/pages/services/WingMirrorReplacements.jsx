@@ -7,6 +7,8 @@ import IconFeatureCard from "../../components/IconFeatureCard";
 import BulletFeatureList from "../../components/Services/BulletFeatureList";
 import Section from "../../components/Section";
 import Container from "../../components/Container";
+import { BenefitsOfOurService2, mirrorRules } from "../../data";
+import { IMAGES } from "../../assets/images";
 
 export default function WingMirrorReplacements() {
 	return (
@@ -28,7 +30,7 @@ export default function WingMirrorReplacements() {
 			{/* INTRO + 2 CARDS (white, centered like figma) */}
 			<Section spacing="large">
 				<Container>
-					<div className="flex flex-col items-center gap-10 sm:gap-14">
+					<div className="flex flex-col items-center gap-10 sm:gap-15">
 						<p className="text-center text-lg sm:text-xl lg:text-2xl leading-relaxed text-black">
 							At AVG Windscreens, we understand the importance of having fully
 							functional wing mirrors for safe and legal driving. Our mobile
@@ -38,14 +40,14 @@ export default function WingMirrorReplacements() {
 						</p>
 
 						<div className="grid grid-cols-1 lg:grid-cols-2 gap-10 xl:gap-16 w-full max-w-[1560px]">
-							<IconFeatureCard
-								title="Two Mirrors Rule"
-								description="By law, most vehicles must have at least two working mirrors that provide an adequate view to the rear. This typically includes the interior rear-view mirror and the driver’s side (offside) wing mirror."
-							/>
-							<IconFeatureCard
-								title="Safety Considerations"
-								description="Even if driving with a damaged wing mirror isn’t strictly illegal, it is dangerous. Damaged mirrors increase the risk of accidents, especially on motorways when changing lanes. It is always best to repair or replace your damaged mirrors as soon as possible."
-							/>
+							{mirrorRules.map((item) => (
+								<IconFeatureCard
+									key={item.id}
+									icon={item.icon}
+									title={item.title}
+									description={item.description}
+								/>
+							))}
 						</div>
 					</div>
 				</Container>
@@ -59,41 +61,25 @@ export default function WingMirrorReplacements() {
 							align="left"
 							title={
 								<>
-									<span className="text-green-600">Benefits</span>
-									<span className="text-emerald-900"> of Our Service</span>
+									<span className="text-[#3D8C58]">Benefits</span>
+									<span className="text-[#024F2D]"> of Our Service</span>
 								</>
 							}
 						/>
 
 						<BulletFeatureList
-							items={[
-								{
-									title: "Convenience:",
-									description:
-										"We offer mobile services, coming to your location of choice to perform the replacement",
-								},
-								{
-									title: "Expert Technicians:",
-									description:
-										"Our team is highly trained and certified, using manufacturer-approved tools and techniques.",
-								},
-								{
-									title: "Quick Service:",
-									description:
-										"We aim to minimise downtime, getting your vehicle back on the road safely and quickly.",
-								},
-							]}
+							items={BenefitsOfOurService2}
 							titleClassName="text-2xl sm:text-3xl lg:text-4xl"
 							descClassName="text-lg sm:text-xl lg:text-2xl leading-relaxed"
 							bulletSizeClassName="h-8 w-8 rounded-[12px]"
 						/>
 					</div>
 
-					<div className="rounded-3xl overflow-hidden">
+					<div className="overflow-hidden">
 						<img
-							src="https://placehold.co/1005x727"
+							src={IMAGES.Benefits_of_Our_Service_Two}
 							alt=""
-							className="w-full h-[280px] sm:h-[420px] lg:h-[727px] object-cover"
+							className="w-full h-[280px] sm:h-[420px] lg:h-[500px] object-cover"
 						/>
 					</div>
 				</div>
@@ -102,18 +88,18 @@ export default function WingMirrorReplacements() {
 			{/* OUR COMMITMENT (white) */}
 			<Section spacing="large">
 				<div className="grid grid-cols-1 lg:grid-cols-2 gap-10 xl:gap-25 items-center">
-					<div className="rounded-3xl overflow-hidden">
+					<div className="overflow-hidden">
 						<img
-							src="https://placehold.co/1091x727"
+							src={IMAGES.Mobile_Wing_Mirror_Replacement}
 							alt=""
-							className="w-full h-[280px] sm:h-[420px] lg:h-[727px] object-cover"
+							className="w-full h-[280px] sm:h-[420px] lg:h-[500px] object-cover"
 						/>
 					</div>
 
 					<div className="flex flex-col gap-8 pr-30">
 						<SectionHeading
 							align="left"
-							title={<span className="text-emerald-900">Our Commitment</span>}
+							title={<span className="text-[#024F2D]">Our Commitment</span>}
 						/>
 						<p className="text-lg sm:text-xl lg:text-2xl leading-relaxed text-black">
 							At AVG Windscreens, we provide a convenient wing mirror glass
