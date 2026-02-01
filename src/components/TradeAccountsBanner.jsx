@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 
 function TickIcon() {
 	return (
-		<div className="h-12 w-12 relative overflow-hidden shrink-0">
+		<div className="sm:h-12 sm:w-12 w-8 h-8 relative overflow-hidden shrink-0">
 			<img src={IMAGES.Yellow_Right} />
 		</div>
 	);
@@ -30,16 +30,16 @@ export default function TradeAccountsBanner({
 
 	return (
 		<Container>
-			<div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-start">
+			<div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-12 lg:gap-24 items-start">
 				{/* Left Side */}
 				<div className="flex flex-col gap-6">
 					<SectionHeading align="left" kicker={kicker} title={title} />
 
-					<Link to={onCtaHref}>
+					<Link to={onCtaHref} className="block w-full sm:w-fit">
 						<Button
 							variant="secondary"
 							as="a"
-							className="w-fit font-medium flex justify-center items-center gap-2 text-white bg-[#D69212] hover:bg-[#bf7f0f] transition-colors duration-300"
+							className="font-medium flex justify-center items-center gap-2 transition-colors duration-300"
 						>
 							Trade Account
 							<MoveUpRight className="w-6 h-6" />
@@ -50,13 +50,16 @@ export default function TradeAccountsBanner({
 				{/* Right Side: Bullets */}
 				<div className="flex flex-col gap-3 items-start">
 					{bullets.map((t) => (
-						<div key={t} className="flex items-start gap-4">
-							<TickIcon />
+						<div key={t} className="flex items-center gap-4">
+							<TickIcon className="shrink-0" />
 
 							<p
-								className={`text-xl sm:text-2xl lg:text-3xl font-medium leading-snug ${
-									darkBg ? "text-white" : "text-black"
-								}`}
+								className={`
+          text-xl sm:text-2xl lg:text-3xl
+          font-medium
+          leading-[1.25] sm:leading-snug
+          ${darkBg ? "text-white" : "text-black"}
+        `}
 							>
 								{t}
 							</p>

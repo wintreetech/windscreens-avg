@@ -15,8 +15,8 @@ const ServiceCard = ({ title, imageUrl, colSpan }) => (
 		</div>
 
 		{/* Title */}
-		<div className="flex items-start justify-between gap-4 pl-4">
-			<h3 className="sm:text-[28px] text-[32px] font-medium text-black leading-tight">
+		<div className="flex items-start justify-between gap-4 p-0 sm:pl-4">
+			<h3 className="text-[24px] sm:text-[28px] font-bold sm:font-medium text-black leading-tight">
 				{title}
 			</h3>
 
@@ -29,7 +29,7 @@ const ServiceCard = ({ title, imageUrl, colSpan }) => (
 
 export default function ServicesGrid({ services }) {
 	return (
-		<Container className="flex flex-col items-center gap-[42px]">
+		<Container className="flex flex-col items-center gap-6 sm:gap-[42px]">
 			<SectionHeading
 				kicker="Our Services"
 				align="center"

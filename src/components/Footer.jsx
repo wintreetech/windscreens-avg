@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Container from "./Container";
 import Button from "./Button";
 import CTAQuoteBar from "./Home/CTAQuoteBar";
+import Section from "./Section";
 
 const socials = [
 	{ label: "Facebook", href: "#" },
@@ -14,7 +15,18 @@ const socials = [
 export default function Footer() {
 	return (
 		<>
-			<CTAQuoteBar />
+			<Section className="bg-[#024F2D] py-20 sm:!py-30">
+				<CTAQuoteBar
+					title={
+						<>
+							<span className="text-white">
+								Need a quote for your vehicle glass requirement?{" "}
+							</span>
+						</>
+					}
+					kicker="Get a Quote"
+				/>
+			</Section>
 			<footer className="w-full bg-white font-henju">
 				{/* Contact section */}
 				<section className="py-16 sm:py-24 lg:py-35">

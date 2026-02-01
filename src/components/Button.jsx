@@ -8,7 +8,8 @@ export default function Button({
 	...props
 }) {
 	const base =
-		"inline-flex items-center justify-center px-6 py-4 text-base sm:text-lg transition focus:outline-none focus:ring-2 focus:ring-offset-2";
+		"inline-flex w-full sm:w-fit items-center justify-center px-6 py-4 text-base sm:text-lg transition focus:outline-none focus:ring-2 focus:ring-offset-2";
+
 	const variants = {
 		primary: "bg-[#024F2D] text-white font-semibold focus:ring-[#024F2D]",
 

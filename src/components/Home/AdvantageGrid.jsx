@@ -3,7 +3,7 @@ import Container from "../Container";
 
 export default function AdvantageGrid({ advantages, title, subtitle, bg }) {
 	return (
-		<Container className="relative flex flex-col items-center gap-[90px]">
+		<Container className="relative flex flex-col items-center gap-8 sm:gap-[90px]">
 			{/* Decorative SVG background */}
 			<svg
 				width="1276"
@@ -22,7 +22,7 @@ export default function AdvantageGrid({ advantages, title, subtitle, bg }) {
 			</svg>
 
 			{/* Heading */}
-			<div className="flex flex-col items-center lg:items-start gap-4 w-full text-center lg:text-left">
+			<div className="flex flex-col items-center lg:items-start gap-2 sm:gap-4 w-full text-center lg:text-left">
 				<p className="text-[#3D8C58] font-henju text-base font-medium tracking-[0.12em]">
 					{title}
 				</p>

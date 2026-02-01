@@ -32,7 +32,7 @@ export default function TestimonialsSection({
 	if (!testimonials.length) return null;
 
 	return (
-		<div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-25 items-center">
+		<div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-25 items-center px-4 lg:px-0 lg:py-0">
 			{/* Left image */}
 			<div className="overflow-hidden">
 				<img
@@ -43,7 +43,7 @@ export default function TestimonialsSection({
 			</div>
 
 			{/* Right content */}
-			<div className="flex flex-col gap-6 pr-30">
+			<div className="flex flex-col sm:gap-6 gap-8  pr-0 sm:pr-30">
 				<SectionHeading align="left" kicker={kicker} title={title} />
 
 				{/* Carousel */}
@@ -52,45 +52,47 @@ export default function TestimonialsSection({
 						{testimonials.map((t, i) => (
 							<div
 								key={i}
-								className="flex-[0_0_100%] px-6" // 👈 THIS IS CRITICAL
+								className="flex-[0_0_100%] " // 👈 THIS IS CRITICAL
 							>
-								{/* Shadow container */}
-								<div className="relative">
-									<div
-										className="
+								<div className="px-2 sm:px-6">
+									{/* Shadow container */}
+									<div className="relative">
+										<div
+											className="
               absolute inset-0
               rounded-[34px]
               shadow-[0_4px_34px_rgba(58,58,58,0.09)]
             "
-									/>
+										/>
 
-									{/* Card */}
-									<div className="relative bg-white p-6 rounded-[34px] flex flex-col gap-8">
-										{/* Top row */}
-										<div className="flex items-center justify-between">
-											<QuoteMarks />
-											{logo && (
-												<img
-													src={logo}
-													alt="logo"
-													className="h-12 w-auto object-contain"
-												/>
-											)}
-										</div>
+										{/* Card */}
+										<div className="relative bg-white p-6 rounded-[34px] flex flex-col gap-8">
+											{/* Top row */}
+											<div className="flex items-center justify-between">
+												<QuoteMarks />
+												{logo && (
+													<img
+														src={logo}
+														alt="logo"
+														className="h-12 w-auto object-contain"
+													/>
+												)}
+											</div>
 
-										{/* Quote */}
-										<p className="text-lg leading-relaxed text-black sm:text-xl lg:text-2xl">
-											{t.quote}
-										</p>
-
-										{/* Author */}
-										<div>
-											<p className="text-2xl font-bold text-[#024F2D] sm:text-3xl lg:text-4xl">
-												{t.name}
+											{/* Quote */}
+											<p className="text-lg leading-relaxed text-black sm:text-xl lg:text-2xl">
+												{t.quote}
 											</p>
-											<p className="text-base font-medium text-[#3D8C58] sm:text-lg">
-												{t.role}
-											</p>
+
+											{/* Author */}
+											<div>
+												<p className="text-2xl font-bold text-[#024F2D] sm:text-3xl lg:text-4xl">
+													{t.name}
+												</p>
+												<p className="text-base font-medium text-[#3D8C58] sm:text-lg">
+													{t.role}
+												</p>
+											</div>
 										</div>
 									</div>
 								</div>

@@ -12,7 +12,7 @@ import { services, advantages, Testimonial } from "../data";
 
 export default function Home() {
 	return (
-		<main className="min-h-screen bg-white">
+		<main>
 			<Hero
 				bgImage={IMAGES.HomeHeroMain}
 				title={

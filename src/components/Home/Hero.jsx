@@ -6,13 +6,13 @@ function TickBadge({ className = "" }) {
 	return (
 		<span
 			className={`
-        inline-flex items-center justify-center
-        w-[54px] h-[54px]
+        inline-flex items-center justify-center w-8 h-8
+        sm:w-[54px] sm:h-[54px]
         ${className}
       `}
 			aria-hidden="true"
 		>
-			<img src={IMAGES.Green_Right} alt="" className="w-[45px] h-[45px]" />
+			<img src={IMAGES.Green_Right} alt="" className="sm:w-[45px] h-[45px]" />
 		</span>
 	);
 }
@@ -37,30 +37,31 @@ export default function Hero({
 			className="
     relative w-full overflow-hidden
     h-[62svh] sm:h-[68svh] lg:h-[900px]
-    min-h-[420px] sm:min-h-[560px] lg:min-h-[900px]
+    min-h-[500px] sm:min-h-[560px] lg:min-h-[900px]
   "
 		>
-			<img
-				src={bgImage}
-				alt=""
-				className="
+			<div className="absolute inset-0">
+				<img
+					src={bgImage}
+					alt=""
+					className="
       block
       w-full h-full
       object-cover
       object-[70%_center]
       lg:object-center
     "
-				loading="eager"
-				decoding="async"
-			/>
-
+					loading="eager"
+					decoding="async"
+				/>
+			</div>
 			{/* MOBILE overlay – POSITION UNCHANGED */}
-			<div className="sm:hidden absolute -left-[175px] top-[339px] w-[596px] h-[490px]">
+			<div className="sm:hidden absolute -left-[145px] top-[120px] w-[596px] h-[500px]">
 				<svg
-					viewBox="0 0 390 490"
+					viewBox="0 0 390 500"
 					fill="none"
 					xmlns="http://www.w3.org/2000/svg"
-					className="absolute left-0 top-0 w-[596px] h-[490px]"
+					className="absolute left-0 top-0 w-[596px] h-[500px]"
 					aria-hidden="true"
 				>
 					<path
@@ -82,31 +83,36 @@ export default function Hero({
 					</defs>
 				</svg>
 
-				<div className="absolute left-[199px] top-[42px] flex flex-col items-start gap-5 w-[325px]">
+				<div className="absolute left-[160px] top-[42px] flex flex-col items-start gap-5 w-[300px]">
 					<p className="text-[#024F2D] text-[28px] leading-[1.1] w-full">
 						<SectionHeading title={title} />
 					</p>
 
 					<div className="flex flex-col items-start gap-2 w-full">
-						{points.slice(0, 2).map((t, idx) => (
-							<div key={idx} className="flex items-center gap-2 w-fit">
-								<TickBadge className="w-8 h-8" />
-								<p className="text-black text-lg w-fit">{t}</p>
+						{points.map((text, idx) => (
+							<div
+								key={idx}
+								className="flex items-center gap-3 sm:gap-4 w-full"
+							>
+								<TickBadge />
+
+								<p
+									className="
+      text-black font-medium
+      text-[16px] sm:text-[24px] lg:text-[34px]
+      
+    "
+								>
+									{text}
+								</p>
 							</div>
 						))}
-
-						{points[2] && (
-							<div className="flex items-start gap-2 w-full">
-								<TickBadge className="w-8 h-8" />
-								<p className="text-black text-lg w-full">{points[2]}</p>
-							</div>
-						)}
 					</div>
 
 					<a
 						href={ctaHref}
 						onClick={handleCta}
-						className="text-[#D69212] text-2xl w-[198px] h-[41px] flex flex-col justify-end"
+						className="text-[#D69212] text-2xl  font-bold"
 					>
 						{ctaText}
 					</a>
@@ -159,7 +165,7 @@ export default function Hero({
 					{title}
 				</h1>
 
-				<div className="flex flex-col items-start gap-3 w-full lg:w-[668px]">
+				<div className="flex flex-col items-center gap-3 w-full lg:w-[668px]">
 					{points.map((text, idx) => (
 						<div key={idx} className="flex items-center gap-3 sm:gap-4 w-full">
 							<TickBadge />

@@ -10,7 +10,7 @@ export default function SectionHeading({
 		align === "center" ? "text-center items-center" : "text-left items-start";
 
 	return (
-		<div className={`flex flex-col  ${alignCls}`}>
+		<div className={`flex flex-col ${alignCls}`}>
 			{kicker ? (
 				<p className="text-[#D69212] text-base font-medium uppercase tracking-widest">
 					{kicker}
@@ -18,7 +18,7 @@ export default function SectionHeading({
 			) : null}
 			{title ? (
 				<h2
-					className={`text-3xl ${kicker ? "mt-6" : ""} sm:text-4xl lg:text-5xl font-bold leading-tight ${extraclass}`}
+					className={`text-2xl  ${kicker ? "mt-2 sm:mt-6" : ""} sm:text-4xl lg:text-5xl font-bold leading-tight ${extraclass}`}
 				>
 					{title}
 				</h2>
