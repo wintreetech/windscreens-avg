@@ -20,17 +20,8 @@ export default function TradeAccount() {
 		<div className="font-henju">
 			<HeroTwo
 				title="Trade Account"
+				bgImage={IMAGES.HeroTradeAccount}
 				breadcrumb={[{ label: "Home", href: "/" }, { label: "Trade Account" }]}
-				images={["https://placehold.co/1920x482"]}
-				// ✅ make rectangle dynamic / same feel as figma
-				cardClassName="
-          lg:w-[834px] lg:h-[384px]
-          lg:left-[64px] lg:top-[241px]
-        "
-				contentClassName="
-          lg:w-[523px]
-          lg:left-[120px] lg:top-[318px]
-        "
 			/>
 
 			<Section spacing="large" className="bg-[#F5F5F5]">
@@ -69,7 +60,7 @@ export default function TradeAccount() {
 			{/* SECTION 1: Intro + Benefits */}
 			<Section spacing="large">
 				<Container>
-					<div className="mx-auto flex flex-col items-center gap-16">
+					<div className="mx-auto flex flex-col items-center gap-8 sm:gap-16">
 						<div className="text-center flex flex-col gap-4">
 							<h2 className="text-3xl font-bold sm:text-4xl lg:text-5xl text-[#024F2D]">
 								Trade Account

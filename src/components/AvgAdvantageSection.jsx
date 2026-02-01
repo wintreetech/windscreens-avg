@@ -14,7 +14,7 @@ export default function AvgAdvantageSection({
 			<div className="flex flex-col gap-16">
 				<div className="flex flex-col gap-4 text-center items-center">
 					<SectionHeading
-						extraclass="!mt-4"
+						extraclass="sm:!mt-4"
 						align="center"
 						kicker={<span className="text-[#024F2D]">{kicker}</span>}
 						title={<span className="text-[#024F2D] ">{title}</span>}

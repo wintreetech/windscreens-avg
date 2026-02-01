@@ -3,7 +3,7 @@ import Container from "../Container";
 import SectionHeading from "../SectionHeading";
 import { PhoneCall } from "lucide-react";
 
-export default function GetQuote({ title, kicker }) {
+export default function GetQuote({ title, kicker, img }) {
 	// ----------- Form state -----------
 	const [formData, setFormData] = useState({
 		name: "",
@@ -105,9 +105,9 @@ export default function GetQuote({ title, kicker }) {
 							</div>
 						</div>
 
-						<div className="rounded-2xl overflow-hidden">
+						<div className="overflow-hidden">
 							<img
-								src="https://placehold.co/700x420"
+								src={img}
 								alt="Vehicle glass service"
 								className="w-full h-[260px] sm:h-[320px] object-cover"
 							/>

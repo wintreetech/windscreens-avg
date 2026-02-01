@@ -10,29 +10,28 @@ import Section from "../../components/Section";
 import Container from "../../components/Container";
 import { BenefitsOfOurService, MaintainingWaterIntegrity } from "../../data";
 import { IMAGES } from "../../assets/images";
+import SplitTextImage from "../../components/Services/SplitTextImage";
 
 export default function BodyglassReplacements() {
 	return (
 		<main className="font-henju">
 			{/* HERO */}
+
 			<HeroTwo
-				title="Bodyglass Replacements"
-				images={[
-					"https://placehold.co/1920x482",
-					"https://placehold.co/2144x780",
-				]}
+				bgImage={IMAGES.HeroBodyglassReplacements}
 				breadcrumb={[
 					{ label: "Home", href: "/" },
 					{ label: "Our Services", href: "/services" },
 					{ label: "Bodyglass Replacements" },
 				]}
+				title="Bodyglass Replacements"
 			/>
 
 			{/* BENEFITS + IMAGE (white) */}
 			<Section spacing="large">
-				<div className="grid grid-cols-1 lg:grid-cols-2 gap-10 xl:gap-25 items-center">
+				<div className="grid px-4 sm:px-0 grid-cols-1 lg:grid-cols-2 gap-10 xl:gap-25 items-center">
 					{/* Left content */}
-					<div className="flex flex-col gap-8 pl-30 order-2 lg:order-1">
+					<div className="flex flex-col gap-8 p-0 sm:pl-30 order-2 lg:order-1">
 						<SectionHeading
 							align="left"
 							title={
@@ -74,7 +73,7 @@ export default function BodyglassReplacements() {
 			<Section spacing="large" className="bg-[#F5F5F5]">
 				<Container>
 					<div className="flex flex-col gap-10">
-						<h2 className="text-center text-3xl sm:text-4xl lg:text-5xl font-bold text-[#024F2D]">
+						<h2 className="text-center text-2xl sm:text-4xl lg:text-5xl font-bold text-[#024F2D]">
 							Maintaining Watertight Integrity
 						</h2>
 
@@ -85,33 +84,30 @@ export default function BodyglassReplacements() {
 
 			{/* OUR COMMITMENT (white) */}
 			<Section spacing="large">
-				<div className="grid grid-cols-1 lg:grid-cols-2 gap-10 xl:gap-25 items-center">
-					<div className="overflow-hidden">
-						<img
-							src={IMAGES.Our_Commitment_Three}
-							alt=""
-							className="w-full h-[280px] sm:h-[420px] lg:h-[600px] object-cover"
-						/>
-					</div>
-
-					<div className="flex flex-col gap-8 pr-30">
-						<SectionHeading
-							align="left"
-							title={<span className="text-[#024F2D]">Our Commitment</span>}
-						/>
-
-						<p className="text-lg sm:text-xl lg:text-2xl leading-relaxed text-black">
-							At AVG Windscreens, we are dedicated to providing a quick body
-							glass replacement service. Our technicians are highly trained and
-							use the latest technology to deliver efficient and reliable
-							replacements.
-						</p>
-
-						<div>
-							<Button variant="primary">Learn More</Button>
-						</div>
-					</div>
-				</div>
+				<SplitTextImage
+					title={
+						<>
+							<span className="text-[#024F2D]">Our Commitment</span>
+						</>
+					}
+					description={
+						<>
+							At AVG Windscreens, we are dedicated to providing the highest
+							quality service and ensuring your windscreen is in optimal
+							condition.
+							<br />
+							<br />
+							Our technicians are highly trained and use the latest technology
+							to deliver efficient and reliable replacements.
+						</>
+					}
+					imageUrl={IMAGES.Our_Commitment_Three}
+					primaryCta={{
+						label: "Learn More",
+						variant: "primary",
+					}}
+					descriptionClassName="text-lg sm:text-xl lg:text-2xl"
+				/>
 			</Section>
 		</main>
 	);

@@ -66,8 +66,9 @@ import Two_Mirrors_Rule from "../Icons/Wing Mirror Replacements/Two Mirrors Rule
 import Safety_Considerations from "../Icons/Wing Mirror Replacements/Safety Considerations.svg";
 import Benefits_of_Our_Service_Two from "./Edited Images/Benefits of Our Service.png";
 
-import testimonial1 from "./Edited Images/photo 2.png";
 import Photo_1 from "./Edited Images/Draft/Photo 1.png";
+import testimonial1 from "./Edited Images/photo 2.png";
+import QuotePhotoVan from "./Edited Images/photo 3.png";
 
 // Who we are
 
@@ -79,8 +80,19 @@ import step_5_who_we_are from "./Edited Images/Timeline images/5.png";
 import step_6_who_we_are from "./Edited Images/Timeline images/6.png";
 
 // Hero Image
-
+import MobileRectangle from "./Rectangle-Mobile.svg";
 import HomeHeroMain from "./Edited Images/Hero main.png";
+import HeroWindscreenChipRepairs from "./Edited Images/Hero- Windscreen Chip Repairs.png";
+import HeroWindScreenReplacement from "./Edited Images/Hero- Windscreen Replacements.png";
+import HeroADASCalibrations from "./Edited Images/Hero- ADAS Calibrations.png";
+import HeroBodyglassReplacements from "./Edited Images/Hero- Bodyglass Replacements.png";
+import HeroWingMirrorReplacements from "./Edited Images/Hero- Wing Mirror Replacements.png";
+import HeroTradeAccount from "./Edited Images/Trade Account.png";
+
+// Footer
+import footer_1 from "./logo/Footer-1.svg";
+import footer_2 from "./logo/Footer-2.svg";
+import footer_3 from "./logo/Footer-3.svg";
 
 export const IMAGES = {
 	logo,
@@ -128,13 +140,24 @@ export const IMAGES = {
 	Safety_Considerations,
 	Two_Mirrors_Rule,
 	Benefits_of_Our_Service_Two,
-	testimonial1,
 	Photo_1,
+	testimonial1,
+	QuotePhotoVan,
 	step_1_who_we_are,
 	step_2_who_we_are,
 	step_3_who_we_are,
 	step_4_who_we_are,
 	step_5_who_we_are,
 	step_6_who_we_are,
+	MobileRectangle,
 	HomeHeroMain,
+	HeroWindscreenChipRepairs,
+	HeroWindScreenReplacement,
+	HeroADASCalibrations,
+	HeroBodyglassReplacements,
+	HeroWingMirrorReplacements,
+	HeroTradeAccount,
+	footer_1,
+	footer_2,
+	footer_3,
 };

@@ -54,19 +54,23 @@ export default function TestimonialsSection({
 								key={i}
 								className="flex-[0_0_100%] " // 👈 THIS IS CRITICAL
 							>
-								<div className="px-2 sm:px-6">
+								<div className="px-3 sm:px-6">
 									{/* Shadow container */}
 									<div className="relative">
 										<div
 											className="
-              absolute inset-0
-              rounded-[34px]
-              shadow-[0_4px_34px_rgba(58,58,58,0.09)]
-            "
+    absolute inset-0
+    rounded-tl-[34px] rounded-tr-[34px] rounded-bl-[34px] rounded-br-0
+    shadow-[0_4px_34px_rgba(58,58,58,0.09)]
+  "
 										/>
 
 										{/* Card */}
-										<div className="relative bg-white p-6 rounded-[34px] flex flex-col gap-8">
+										<div
+											className="relative bg-white p-6 
+  rounded-tl-[34px] rounded-tr-[34px] rounded-bl-[34px] rounded-br-0
+  flex flex-col gap-8"
+										>
 											{/* Top row */}
 											<div className="flex items-center justify-between">
 												<QuoteMarks />
@@ -102,7 +106,7 @@ export default function TestimonialsSection({
 				</div>
 
 				{/* DOTS */}
-				<div className="mt-8 flex items-center justify-center gap-2">
+				<div className="flex items-center justify-center gap-2">
 					{testimonials.map((_, index) => {
 						const active = index === selectedIndex;
 

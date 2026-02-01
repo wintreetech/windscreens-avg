@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import RadialProgress from "./RadialProgress";
 
 /* ---------- STEP DOT ---------- */
 function StepDot({ active }) {
@@ -39,7 +40,14 @@ function Select({ label, name, value, onChange, options }) {
 			name={name}
 			value={value}
 			onChange={onChange}
-			className="select w-full bg-zinc-100 text-black text-base sm:text-lg"
+			className="
+        w-full
+        px-4 py-5
+        bg-zinc-100
+        text-black text-base sm:text-lg
+        rounded-none
+        outline-none
+      "
 		>
 			<option value="">{label}</option>
 			{options.map((opt) => (
@@ -50,11 +58,10 @@ function Select({ label, name, value, onChange, options }) {
 		</select>
 	);
 }
-
 /* ---------- RADIO GROUP (DaisyUI) ---------- */
 function RadioGroup({ label, name, value, onChange }) {
 	return (
-		<div className="flex items-center justify-between p-6 bg-zinc-100">
+		<div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 p-6 bg-zinc-100">
 			<p className="text-black/60 text-base sm:text-lg">{label}</p>
 
 			<div className="flex items-center gap-6">
@@ -123,27 +130,59 @@ export default function TradeAccountApplication() {
 		<div className="grid grid-cols-1 lg:grid-cols-[560px_1fr] gap-10 lg:gap-16">
 			{/* LEFT PANEL */}
 			<div className="relative flex flex-col gap-12">
-				<h2 className="text-3xl sm:text-4xl lg:text-5xl text-[#024F2D]">
+				{/* TITLE */}
+				<h2 className="text-3xl sm:text-4xl lg:text-5xl text-[#024F2D] font-bold">
 					Trade Account Application
 				</h2>
 
-				<div className="relative flex flex-col gap-10">
-					{/* vertical line */}
-					<div className="hidden lg:block absolute left-[27px] top-[60px] h-[72px] border-l-[5px] border-neutral-200" />
+				{/* MOBILE radial */}
+				<div className="lg:hidden flex items-center justify-center gap-4 my-2 px-2">
+					{/* Radial Progress */}
+					<div className="w-2/5 flex justify-center">
+						<RadialProgress
+							value={step === 1 ? 50 : 100}
+							size={72} // smaller on mobile
+							thickness={10}
+							label={step === 1 ? "1" : "2"} // just show step number inside circle
+						/>
+					</div>
 
-					<div className="flex items-center gap-4">
+					{/* Step Titles */}
+					<div className="w-3/5 flex flex-col justify-center gap-1">
+						<p
+							className={`text-lg font-medium ${
+								step === 1 ? "text-[#024F2D]" : "text-black/50"
+							}`}
+						>
+							1) Business Contact Information
+						</p>
+						<p
+							className={`text-lg font-medium ${
+								step === 2 ? "text-[#024F2D]" : "text-black/50"
+							}`}
+						>
+							2)Company Information
+						</p>
+					</div>
+				</div>
+
+				{/* DESKTOP vertical timeline */}
+				<div className="hidden lg:flex relative flex-col gap-10">
+					<div className="absolute left-7 top-10 h-30 w-[3px] bg-neutral-200" />
+
+					<div className="flex items-center gap-4 relative z-10">
 						<StepDot active={step === 1} />
-						<p className="text-2xl sm:text-3xl lg:text-4xl font-medium">
-							Business Contact information
+						<p
+							className={`text-2xl sm:text-3xl lg:text-4xl font-medium ${step === 1 ? "text-black" : "text-black/50"}`}
+						>
+							Business Contact Information
 						</p>
 					</div>
 
-					<div className="flex items-center gap-4">
+					<div className="flex items-center gap-4 relative z-10">
 						<StepDot active={step === 2} />
 						<p
-							className={`text-2xl sm:text-3xl lg:text-4xl font-medium ${
-								step === 2 ? "text-black" : "text-black/50"
-							}`}
+							className={`text-2xl sm:text-3xl lg:text-4xl font-medium ${step === 2 ? "text-black" : "text-black/50"}`}
 						>
 							Company Information
 						</p>
@@ -152,7 +191,7 @@ export default function TradeAccountApplication() {
 			</div>
 
 			{/* RIGHT FORM */}
-			<div className="bg-white p-6 sm:p-8 flex flex-col gap-4">
+			<div className="bg-white p-4 sm:p-8 flex flex-col gap-4">
 				{step === 1 && (
 					<>
 						<Input
@@ -285,7 +324,7 @@ export default function TradeAccountApplication() {
 
 						<button
 							onClick={() => setStep(2)}
-							className="mt-4 px-6 py-4 bg-[#024F2D] text-white text-lg w-fit"
+							className="mt-6 px-6 py-4 bg-[#024F2D] text-white text-lg w-full sm:w-fit"
 						>
 							Next
 						</button>

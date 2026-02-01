@@ -4,6 +4,7 @@ import Container from "./Container";
 import Button from "./Button";
 import CTAQuoteBar from "./Home/CTAQuoteBar";
 import Section from "./Section";
+import { IMAGES } from "../assets/images";
 
 const socials = [
 	{ label: "Facebook", href: "#" },
@@ -57,18 +58,32 @@ export default function Footer() {
 									</Button>
 								</div>
 
-								<div className="mt-6 flex flex-wrap items-center gap-6">
-									<div className="h-16 w-28 bg-neutral-100 rounded" />
-									<div className="h-12 w-44 bg-neutral-100 rounded" />
-									<div className="h-10 w-32 bg-neutral-100 rounded" />
+								<div className="mt-6 flex flex-col items-center gap-6 md:flex-row md:flex-wrap">
+									<img
+										src={IMAGES.footer_1}
+										alt="Footer 1"
+										className="h-16 w-28 object-contain"
+									/>
+
+									<img
+										src={IMAGES.footer_2}
+										alt="Footer 2"
+										className="h-12 w-44 object-contain"
+									/>
+
+									<img
+										src={IMAGES.footer_3}
+										alt="Footer 3"
+										className="h-10 w-32 object-contain"
+									/>
 								</div>
 							</div>
 
-							<div className="rounded-3xl overflow-hidden">
+							<div className="overflow-hidden">
 								<img
-									src="https://placehold.co/1005x727"
+									src={IMAGES.QuotePhotoVan}
 									alt="Contact"
-									className="w-full h-[260px] sm:h-[360px] lg:h-[480px] object-cover"
+									className="w-full h-[260px] sm:h-[360px] lg:h-[580px] object-cover"
 								/>
 							</div>
 						</div>

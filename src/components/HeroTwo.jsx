@@ -1,9 +1,10 @@
 import React from "react";
+import { IMAGES } from "../assets/images";
 
 export default function HeroTwo({
-	bgImage = "/Hero.png",
-	breadcrumb = ["Home", "Our Services", "Windscreen Chip Repairs"],
-	title = "Windscreen Chip Repairs",
+	bgImage,
+	breadcrumb,
+	title,
 	topOffset = 98,
 }) {
 	return (
@@ -12,7 +13,7 @@ export default function HeroTwo({
 			<img
 				src={bgImage}
 				alt="header"
-				className="absolute inset-0 w-full h-full object-cover object-top sm:object-center"
+				className="absolute inset-0 w-full h-full object-cover object-[60%_top] sm:object-center"
 			/>
 			<div className="absolute inset-0 bg-black/10" />
 
@@ -24,7 +25,7 @@ export default function HeroTwo({
 				viewBox="0 0 1075 583"
 				fill="none"
 				xmlns="http://www.w3.org/2000/svg"
-				className="
+				className=" hidden sm:block 
           absolute
           left-0 bottom-0
           sm:left-6 sm:bottom-auto sm:top-16
@@ -54,6 +55,22 @@ export default function HeroTwo({
 				</defs>
 			</svg>
 
+			<img
+				src={IMAGES.MobileRectangle} // your mobile image file
+				alt=""
+				aria-hidden="true"
+				className="
+    block        // show on mobile
+    sm:hidden    // hide on tablet/desktop
+   absolute
+          left-0 bottom-0
+          
+          w-[78vw]
+          h-auto
+          pointer-events-none
+  "
+			/>
+
 			{/* Content:
           - Mobile: positioned relative to bottom-aligned SVG
           - sm+: your existing placement
@@ -66,21 +83,29 @@ export default function HeroTwo({
           lg:left-[120px] lg:top-[200px]
           flex flex-col items-start
           gap-2 sm:gap-4
-          w-[62vw] sm:w-[420px] lg:w-[820px]
+          w-[62vw] sm:w-[420px] lg:w-[890px]
         "
 			>
 				{/* Breadcrumb */}
 				<div className="flex flex-wrap items-center gap-x-2 gap-y-1">
-					{breadcrumb.map((item, i) => (
-						<span key={i}>
-							{item.href ? (
-								<a href={item.href}>{item.label}</a>
-							) : (
-								item.label // render the string only
-							)}
-							{i < breadcrumb.length - 1 && " / "}
-						</span>
-					))}
+					{breadcrumb.map((item, i) => {
+						const isLast = i === breadcrumb.length - 1; // last item = current page
+						return (
+							<span
+								key={i}
+								className={`${i > 1 ? "hidden sm:inline" : "inline"} ${isLast ? "font-bold" : ""}`}
+							>
+								{item.href && !isLast ? (
+									<a href={item.href} className="hover:underline">
+										{item.label}
+									</a>
+								) : (
+									item.label
+								)}
+								{i < breadcrumb.length - 1 && " / "}
+							</span>
+						);
+					})}
 				</div>
 
 				{/* Title */}

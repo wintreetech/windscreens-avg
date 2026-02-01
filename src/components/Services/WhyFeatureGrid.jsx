@@ -9,14 +9,17 @@ export default function WhyFeatureGrid({
 	kicker,
 	items = [],
 	bg = "white",
+	extraClass,
 }) {
 	return (
-		<Container className="gap-25 flex flex-col">
+		<Container className="sm:gap-25 gap-8 flex flex-col">
 			<div className="flex justify-center">
 				<SectionHeading align="center" kicker={kicker} title={title} />
 			</div>
 
-			<div className="grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-16">
+			<div
+				className={`grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-16 ${extraClass}`}
+			>
 				{items.map((item) => (
 					<IconFeatureCard
 						key={item.title}

@@ -1,22 +1,21 @@
 import React from "react";
 import HeroTwo from "../../components/HeroTwo";
-import WhyFeatureGrid from "../../components/services/WhyFeatureGrid";
-import SplitTextImage from "../../components/services/SplitTextImage";
+
+import SplitTextImage from "../../components/Services/SplitTextImage";
+
 import Section from "../../components/Section";
 import Container from "../../components/Container";
 import GetQuote from "../../components/Services/GetQuote";
 import { IMAGES } from "../../assets/images";
 import { WhyRepair } from "../../data";
+import WhyFeatureGrid from "../../components/services/WhyFeatureGrid";
 
 export default function WindscreenChipRepairs() {
 	return (
 		<main className="font-henju">
 			<HeroTwo
 				title="Windscreen Chip Repairs"
-				images={[
-					"https://placehold.co/1920x482",
-					"https://placehold.co/2130x1132",
-				]}
+				bgImage={IMAGES.HeroWindscreenChipRepairs}
 				breadcrumb={[
 					{ label: "Home", href: "/" },
 					{ label: "Our Services", href: "/services" },
@@ -41,6 +40,7 @@ export default function WindscreenChipRepairs() {
 			{/* Split section: text + image */}
 			<Section spacing="large" className="bg-[#F5F5F5]">
 				<SplitTextImage
+					reverse={true}
 					title={
 						<>
 							<span className="text-[#024F2D]">A small chip </span>
@@ -138,6 +138,7 @@ export default function WindscreenChipRepairs() {
 
 			<Section spacing="large" className="bg-[#F5F5F5]">
 				<GetQuote
+					img={IMAGES.QuotePhotoVan}
 					kicker="Get a Quote"
 					title={
 						<>

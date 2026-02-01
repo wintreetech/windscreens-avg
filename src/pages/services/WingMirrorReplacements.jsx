@@ -9,22 +9,21 @@ import Section from "../../components/Section";
 import Container from "../../components/Container";
 import { BenefitsOfOurService2, mirrorRules } from "../../data";
 import { IMAGES } from "../../assets/images";
+import SplitTextImage from "../../components/Services/SplitTextImage";
 
 export default function WingMirrorReplacements() {
 	return (
 		<main className="font-henju">
 			{/* HERO */}
+
 			<HeroTwo
-				title="Wing Mirror Replacements"
-				images={[
-					"https://placehold.co/1920x482",
-					"https://placehold.co/2394x740",
-				]}
+				bgImage={IMAGES.HeroWingMirrorReplacements}
 				breadcrumb={[
 					{ label: "Home", href: "/" },
 					{ label: "Our Services", href: "/services" },
 					{ label: "Wing Mirror Replacements" },
 				]}
+				title="Wing Mirror Replacements"
 			/>
 
 			{/* INTRO + 2 CARDS (white, centered like figma) */}
@@ -39,7 +38,7 @@ export default function WingMirrorReplacements() {
 							road quickly and safely
 						</p>
 
-						<div className="grid grid-cols-1 lg:grid-cols-2 gap-10 xl:gap-16 w-full max-w-[1560px]">
+						<div className="grid grid-cols-1 lg:grid-cols-2 gap-10 xl:gap-16 w-full">
 							{mirrorRules.map((item) => (
 								<IconFeatureCard
 									key={item.id}
@@ -55,8 +54,8 @@ export default function WingMirrorReplacements() {
 
 			{/* BENEFITS + IMAGE (grey like figma) */}
 			<Section spacing="large" className="bg-[#F5F5F5]">
-				<div className="grid grid-cols-1 lg:grid-cols-2 gap-10 xl:gap-25 items-center">
-					<div className="flex flex-col gap-8 pl-30">
+				<div className="grid px-4 sm:px-0 grid-cols-1 lg:grid-cols-2 gap-10 xl:gap-25 items-center">
+					<div className="flex flex-col gap-8 sm:pl-30">
 						<SectionHeading
 							align="left"
 							title={
@@ -87,32 +86,30 @@ export default function WingMirrorReplacements() {
 
 			{/* OUR COMMITMENT (white) */}
 			<Section spacing="large">
-				<div className="grid grid-cols-1 lg:grid-cols-2 gap-10 xl:gap-25 items-center">
-					<div className="overflow-hidden">
-						<img
-							src={IMAGES.Mobile_Wing_Mirror_Replacement}
-							alt=""
-							className="w-full h-[280px] sm:h-[420px] lg:h-[500px] object-cover"
-						/>
-					</div>
-
-					<div className="flex flex-col gap-8 pr-30">
-						<SectionHeading
-							align="left"
-							title={<span className="text-[#024F2D]">Our Commitment</span>}
-						/>
-						<p className="text-lg sm:text-xl lg:text-2xl leading-relaxed text-black">
-							At AVG Windscreens, we provide a convenient wing mirror glass
-							replacement services. Our technicians are highly trained and use
-							the latest technology to deliver efficient and reliable
-							replacements.
-						</p>
-
-						<div>
-							<Button variant="primary">Learn More</Button>
-						</div>
-					</div>
-				</div>
+				<SplitTextImage
+					title={
+						<>
+							<span className="text-[#024F2D]">Our Commitment</span>
+						</>
+					}
+					description={
+						<>
+							At AVG Windscreens, we are dedicated to providing the highest
+							quality service and ensuring your windscreen is in optimal
+							condition.
+							<br />
+							<br />
+							Our technicians are highly trained and use the latest technology
+							to deliver efficient and reliable replacements.
+						</>
+					}
+					imageUrl={IMAGES.Mobile_Wing_Mirror_Replacement}
+					primaryCta={{
+						label: "Learn More",
+						variant: "primary",
+					}}
+					descriptionClassName="text-lg sm:text-xl lg:text-2xl"
+				/>
 			</Section>
 		</main>
 	);

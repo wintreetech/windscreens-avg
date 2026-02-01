@@ -7,7 +7,9 @@ export default function SectionHeading({
 	extraclass,
 }) {
 	const alignCls =
-		align === "center" ? "text-center items-center" : "text-left items-start";
+		align === "center"
+			? "items-center text-center"
+			: "items-center text-center sm:items-start sm:text-left";
 
 	return (
 		<div className={`flex flex-col ${alignCls}`}>
